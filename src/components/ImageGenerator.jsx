@@ -64,17 +64,19 @@ export default function ImageGenerator() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row p-3 w-full max-w-4xl md:gap-0 gap-2">
+    <div className="flex flex-col lg:flex-row p-3 w-full max-w-5xl mx-auto lg:gap-6 gap-8">
       {/* Drawing Canvas */}
-      <div className="flex-1 bg-white p-4 rounded-lg">
-        <h2 className="text-xl font-semibold mb-2 text-gray-700">
+      <div className="flex-1 bg-white p-4 rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-3 text-gray-700">
           Draw Your Doodle
         </h2>
-        <DrawingCanvas onDraw={handleCanvasDraw} />
-        <div className="mt-4 flex gap-4">
+        <div className="flex justify-center">
+          <DrawingCanvas onDraw={handleCanvasDraw} />
+        </div>
+        <div className="mt-4 flex flex-wrap sm:flex-nowrap gap-3 justify-center sm:justify-start">
           <button
             onClick={handleGenerateImage}
-            className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors hover:cursor-pointer disabled:bg-blue-300 flex items-center justify-center"
+            className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors hover:cursor-pointer disabled:bg-blue-300 flex items-center justify-center"
             disabled={loading}
           >
             {loading && <Loader2 className="animate-spin mr-2 h-4 w-4" />}
@@ -83,7 +85,7 @@ export default function ImageGenerator() {
 
           <button
             onClick={handleClearCanvas}
-            className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 hover:cursor-pointer"
+            className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 hover:cursor-pointer"
             disabled={loading}
           >
             Clear Canvas
@@ -92,11 +94,11 @@ export default function ImageGenerator() {
       </div>
 
       {/* Generated Image */}
-      <div className="flex-1 bg-white p-4 rounded-lg">
-        <h2 className="text-xl font-semibold mb-2 text-gray-700">
+      <div className="flex-1 bg-white p-4 rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-3 text-gray-700">
           Generated Image
         </h2>
-        <div className="w-full h-[400px] border-none bg-gray-200 rounded-none flex items-center justify-center">
+        <div className="w-full h-[350px] sm:h-[400px] border-2 border-gray-200 rounded-lg flex items-center justify-center bg-gray-50">
           {generatedImage ? (
             <img
               src={generatedImage}
@@ -109,14 +111,14 @@ export default function ImageGenerator() {
               <p className="text-gray-500">Generating the image...</p>
             </div>
           ) : (
-            <p className="text-gray-500">
+            <p className="text-gray-500 px-4 text-center">
               Draw a doodle and click "Generate Image"
             </p>
           )}
         </div>
 
         {description && (
-          <div className="bg-gray-100 text-left rounded-lg px-3 py-2 mt-3 transition-all duration-1000 ">
+          <div className="bg-gray-100 text-left rounded-lg px-4 py-3 mt-4 transition-all duration-1000 shadow-sm">
             <p
               className={`${cabin.className} font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-600 transition-opacity duration-[2000ms] opacity-100`}
             >
