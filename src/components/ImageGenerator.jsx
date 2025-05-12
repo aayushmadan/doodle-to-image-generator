@@ -73,7 +73,7 @@ export default function ImageGenerator() {
         <div className="flex justify-center">
           <DrawingCanvas onDraw={handleCanvasDraw} />
         </div>
-        <div className="ml-7 mt-6 mb-3 flex flex-wrap sm:flex-nowrap gap-3 justify-center sm:justify-start">
+        <div className="mt-6 mb-3 flex flex-wrap sm:flex-nowrap gap-3 justify-center sm:justify-start">
           <button
             onClick={handleGenerateImage}
             className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors hover:cursor-pointer disabled:bg-blue-300 flex items-center justify-center"
