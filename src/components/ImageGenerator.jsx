@@ -64,9 +64,9 @@ export default function ImageGenerator() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row p-3 w-full max-w-5xl mx-auto lg:gap-6 gap-8">
+    <div className="flex flex-col lg:flex-row p-3 w-full max-w-5xl mx-auto lg:gap-5 gap-8">
       {/* Drawing Canvas */}
-      <div className="flex-1 bg-white p-4 rounded-lg shadow-md">
+      <div className="flex-1 bg-white p-4 rounded-lg">
         <h2 className="text-xl font-semibold mb-3 text-gray-700">
           Draw Your Doodle
         </h2>
@@ -94,11 +94,11 @@ export default function ImageGenerator() {
       </div>
 
       {/* Generated Image */}
-      <div className="flex-1 bg-white p-4 rounded-lg shadow-md">
+      <div className="flex-1 bg-white p-4">
         <h2 className="text-xl font-semibold mb-3 text-gray-700">
           Generated Image
         </h2>
-        <div className="w-full h-[350px] sm:h-[400px] border-2 border-gray-200 rounded-lg flex items-center justify-center bg-gray-50">
+        <div className=" w-full h-[350px] sm:h-[400px] rounded-none flex mx-auto items-center justify-center bg-gray-100 min-w-[300px] max-w-[400px] aspect-square">
           {generatedImage ? (
             <img
               src={generatedImage}
