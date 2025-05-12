@@ -66,14 +66,14 @@ export default function ImageGenerator() {
   return (
     <div className="flex flex-col lg:flex-row p-3 w-full max-w-5xl mx-auto lg:gap-5 gap-8">
       {/* Drawing Canvas */}
-      <div className="flex-1 bg-white p-4 rounded-lg">
+      <div className="flex-1 bg-white p-4 rounded-lg g">
         <h2 className="text-xl font-semibold mb-3 text-gray-700">
           Draw Your Doodle
         </h2>
         <div className="flex justify-center">
           <DrawingCanvas onDraw={handleCanvasDraw} />
         </div>
-        <div className="mt-4 flex flex-wrap sm:flex-nowrap gap-3 justify-center sm:justify-start">
+        <div className="ml-7 mt-6 mb-3 flex flex-wrap sm:flex-nowrap gap-3 justify-center sm:justify-start">
           <button
             onClick={handleGenerateImage}
             className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors hover:cursor-pointer disabled:bg-blue-300 flex items-center justify-center"
