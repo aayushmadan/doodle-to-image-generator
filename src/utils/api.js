@@ -3,6 +3,9 @@ const HUGGING_FACE_API_KEY = process.env.NEXT_PUBLIC_HUGGING_FACE_API_KEY;
 
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 const HUGGING_FACE_API_URL = 'https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0';
+// const HUGGING_FACE_API_URL = 'https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large';
+// const HUGGING_FACE_API_URL = 'https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2-base';
+
 
 /**
  * Get description of a doodle using Google's Gemini AI
@@ -23,7 +26,7 @@ export async function getDoodleDescription(dataUrl) {
         contents: [
           {
             parts: [
-              { text: 'Describe this sketch in one sentence, focusing on the main object or scene.' },
+              { text: 'Describe this doodle in one sentence, focusing on the main object or scene.' },
               {
                 inline_data: {
                   mime_type: 'image/png',
@@ -62,7 +65,7 @@ export async function generateImageFromDescription(description) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        inputs: `${description}, detailed, realistic style`,
+        inputs: `${description}, detailed, realistic style image`,
         parameters: {
           num_inference_steps: 50,
           guidance_scale: 7.5,

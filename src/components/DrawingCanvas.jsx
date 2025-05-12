@@ -12,13 +12,11 @@ export default function DrawingCanvas({ onDraw }) {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    // Get the display size of the canvas
-    const displayWidth = canvas.clientWidth
-    const displayHeight = canvas.clientHeight
+    const displayWidth = canvas.offsetWidth
+    const displayHeight = canvas.offsetHeight
     
-    // Set the canvas internal size to match its display size
     canvas.width = displayWidth
-    canvas.height = displayHeight
+    canvas.height = displayHeight    
     
     // Get canvas context
     const context = canvas.getContext('2d')
@@ -126,7 +124,8 @@ export default function DrawingCanvas({ onDraw }) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="border-2 border-gray-400 rounded-lg touch-none"
+        // className="border-2 border-gray-400 rounded-lg touch-none"
+        className="border-2 border-gray-400 rounded-lg touch-none w-full min-w-[300px] aspect-square"  
         width="400"
         height="400"
         style={{ width: '400px', height: '400px' }}
