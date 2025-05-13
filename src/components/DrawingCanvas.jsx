@@ -126,9 +126,9 @@ export default function DrawingCanvas({ onDraw }) {
         onTouchEnd={handleTouchEnd}
         // className="border-2 border-gray-400 rounded-lg touch-none"
         className="border-2 border-gray-400 rounded-lg touch-none w-full min-w-[300px] aspect-square"  
-        width="400"
-        height="400"
-        style={{ width: '400px', height: '400px' }}
+        width="420"
+        height="420"
+        style={{ width: '420px', height: '420px' }}
       />
     </div>
   )

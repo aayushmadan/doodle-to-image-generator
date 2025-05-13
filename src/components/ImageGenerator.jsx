@@ -73,7 +73,7 @@ export default function ImageGenerator() {
         <div className="flex justify-center">
           <DrawingCanvas onDraw={handleCanvasDraw} />
         </div>
-        <div className="mt-6 mb-3 flex flex-wrap sm:flex-nowrap gap-3 justify-center sm:justify-start">
+        <div className="mt-6 mb-3 px-4 flex flex-wrap sm:flex-nowrap gap-3 justify-center sm:justify-start">
           <button
             onClick={handleGenerateImage}
             className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors hover:cursor-pointer disabled:bg-blue-300 flex items-center justify-center"
@@ -98,7 +98,12 @@ export default function ImageGenerator() {
         <h2 className="text-xl font-semibold mb-3 text-gray-700">
           Generated Image
         </h2>
-        <div className=" w-full h-[350px] sm:h-[400px] rounded-none flex mx-auto items-center justify-center bg-gray-100 min-w-[300px] max-w-[400px] aspect-square">
+        <div
+          className=" w-full h-[350px] sm:h-[400px] rounded-none flex mx-auto items-center justify-center bg-gray-100 min-w-[300px] max-w-[400px] aspect-square"
+          width="420"
+          height="420"
+          style={{ width: "420px", height: "420px" }}
+        >
           {generatedImage ? (
             <img
               src={generatedImage}
@@ -128,7 +133,11 @@ export default function ImageGenerator() {
         )}
 
         <div className="mt-3">
-          {error && <p className="mt-4 text-red-500">Failed to generate the image, try again.</p>}
+          {error && (
+            <p className="mt-4 text-red-500">
+              Failed to generate the image, try again.
+            </p>
+          )}
         </div>
       </div>
     </div>

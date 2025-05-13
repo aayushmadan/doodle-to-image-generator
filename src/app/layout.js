@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Doodle to Image Generator',
+  title: 'Doodlify',
   description: 'Turn your doodles into realistic images using AI',
 }
 
