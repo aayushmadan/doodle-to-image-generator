@@ -16,7 +16,7 @@ const ImageGenerator = dynamic(() => import('@/components/ImageGenerator'), {
 
 export default function Home() {
   return (
-    <main className="md:h-screen h-full flex-1 items-center justify-center sm:w-screen ">
+    <main className="md:h-screen h-full flex-1 items-center justify-center sm:w-screen overflow-x-hidden">
       <div className='md:h-screen h-full bg-gray-100 rounded-lg p-2 w-full sm:w-screen flex flex-col items-center justify-start text-center'>
         <h1
           className={`${cabin.className} text-[28px] md:text-4xl mt-3 mb-3 text-all bg-gradient-to-r from-pink-600 to-blue-700 inline-block text-transparent bg-clip-text h-16`}
